@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Navigation Test</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .test-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .step {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+        }
+        .step h3 {
+            margin: 0 0 10px 0;
+            color: #334155;
+        }
+        .button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 5px 5px 0;
+        }
+        .button:hover {
+            background: #2563eb;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            background: #f1f5f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>ComplianceAI Mobile Navigation Test</h1>
+        
+        <div class="step">
+            <h3>Step 1: Clear Storage (Reset)</h3>
+            <p>Clear any existing authentication data</p>
+            <button class="button" onclick="clearStorage()">Clear Storage</button>
+            <div id="clear-result" class="result" style="display:none;"></div>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Go to Login Page</h3>
+            <p>Navigate to the login page and use trial mode</p>
+            <a href="https://def8124455924293b3fb4ebe7fb42e85-0a43f67fda14467c8c81986aa.fly.dev/login" class="button" target="_blank">Open Login Page</a>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: Test Authenticated Pages</h3>
+            <p>After using trial mode, test these pages:</p>
+            <a href="https://def8124455924293b3fb4ebe7fb42e85-0a43f67fda14467c8c81986aa.fly.dev/dashboard" class="button" target="_blank">Dashboard</a>
+            <a href="https://def8124455924293b3fb4ebe7fb42e85-0a43f67fda14467c8c81986aa.fly.dev/current-projects" class="button" target="_blank">Current Projects</a>
+        </div>
+
+        <div class="step">
+            <h3>Step 4: Check Mobile Navigation</h3>
+            <p>On mobile (or DevTools mobile view), you should see:</p>
+            <ul>
+                <li>✅ Mobile header with hamburger menu (not full sidebar)</li>
+                <li>✅ Main content taking up full width</li>
+                <li>✅ Sidebar only appears when tapping hamburger menu</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function clearStorage() {
+            localStorage.clear();
+            sessionStorage.clear();
+            document.getElementById('clear-result').style.display = 'block';
+            document.getElementById('clear-result').textContent = 'Storage cleared! Now go to login page and use trial mode.';
+        }
+    </script>
+</body>
+</html>

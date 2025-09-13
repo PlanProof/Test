@@ -1,0 +1,33 @@
+# Development files
+*.md
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Test files
+**/*.test.*
+**/*.spec.*
+test/
+tests/
+
+# Scripts (except for build/deployment)
+scripts/import-gnaf.*
+scripts/setup-database.*
+
+# Documentation
+docs/
+*.md
+
+# Git
+.git/
+.gitignore
+
+# Environment (should be set in Vercel dashboard)
+.env.local
+.env.development.local
+.env.test.local
+
+# Cache directories
+.next/cache/
+node_modules/.cache/
